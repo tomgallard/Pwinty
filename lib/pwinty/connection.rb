@@ -9,8 +9,9 @@ module Pwinty
       def connection
         connection = Faraday.new(:url => @target_url) do |builder|
           builder.use FaradayMiddleware::EncodeJson
-          builder.use FaradayMiddleware::ParseJson
           builder.use Faraday::Response::Logger
+          builder.use FaradayMiddleware::Mashify
+          builder.use Faraday::Response::ParseJson
           builder.use FaradayMiddleware::Instrumentation
           builder.use FaradayMiddleware::RaiseHttpException
           builder.adapter Faraday.default_adapter

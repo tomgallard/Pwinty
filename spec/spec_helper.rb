@@ -1,10 +1,6 @@
 require 'pwinty'
 require 'rspec'
 require 'webmock/rspec'
-
-def initialize
-  @baseUrl = "https://sandbox.pwinty.com"
-end
 def fixture_path
   File.expand_path("../fixtures",__FILE__)
 end
@@ -34,4 +30,8 @@ end
 def stub_get_order_not_found
   stub_request(:get,"https://sandbox.pwinty.com/Orders").
     to_return(File.new('./spec/fixtures/not_found.txt'))
+end
+def stub_get_order_success
+  stub_request(:get,"https://sandbox.pwinty.com/Orders").
+    to_return(File.new('./spec/fixtures/get_single_order_success.txt'))
 end

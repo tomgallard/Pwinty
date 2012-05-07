@@ -1,0 +1,9 @@
+HTTP/1.1 200 OK
+Server: test
+Date: Thu 06 May 2012 00:00:00 GMT
+Content-Type: application/json
+Connection: keep-alive
+Keep-Alive: timeout=20
+Content-Length: 397
+
+{"id":1,"address1":"123 Farm Drive","address2":"Blue farm","postalOrZipCode":"RG1 4VB","country":"UK","addressTownOrCity":"Norwich","recipientName":"test user","textOnReverse":null,"stateOrCounty":"East Anglia","status":"NotYetSubmitted","photos":[{"id":1,"type":"3.5x5","url":"http://farm8.staticflickr.com/7069/6856377117_069ab31802_b.jpg","status":"Ok","copies":2,"sizing":"Crop","orderId":1}]}
