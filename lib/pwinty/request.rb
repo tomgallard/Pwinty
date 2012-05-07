@@ -8,6 +8,7 @@ module Pwinty
         response = connection.send(action,path) do |request|
           request.body = options[:body] if options[:body]
           request.headers = headers unless headers.empty?
+          request.url('',options[:query]) if options[:query]
         end
         response.body
       end

@@ -1,5 +1,5 @@
 require "pwinty/version"
-
+require "pwinty/client"
 module Pwinty
-  # Your code goes here...
+   
 end

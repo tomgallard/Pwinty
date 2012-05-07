@@ -9,6 +9,8 @@ module FaradayMiddleware
             raise Pwinty::BadRequest,response
           when 401
             raise Pwinty::NotAuthorized,response
+          when 404
+            raise Pwinty::NotFound,response
         end
       end
     end

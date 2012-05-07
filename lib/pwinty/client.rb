@@ -1,6 +1,6 @@
-require './lib/request.rb'
-require './lib/connection.rb'
-require './lib/error.rb'
+require 'pwinty/request.rb'
+require 'pwinty/connection.rb'
+require 'pwinty/error.rb'
 module Pwinty
   class Client
 
@@ -10,13 +10,15 @@ module Pwinty
       @target_url = 'https://sandbox.pwinty.com'
     end
 
-    def GetOrders
+    def get_orders
       begin
         response = request(:get,'https://sandbox.pwinty.com/Orders',{})
-        puts response.inspect
-#      rescue
-#       puts 'error doing get'
+        response
       end
+    end
+    def get_order(id)
+      response = request(:get,'https://sandbox.pwinty.com/Orders',
+          { 'query' => { 'id' => id } })
     end
     include Connection
     include Request
